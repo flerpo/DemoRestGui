@@ -28,4 +28,19 @@
 <assembly name="Telerik.WinControls.RadDock, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
 <assembly name="Telerik.WinControls.ChartView, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
 <assembly name="Telerik.WinControls.UI, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.UI, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.UI, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.Themes.Aqua, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.Themes.Breeze, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.Themes.Desert, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.Themes.HighContrastBlack, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.Themes.Office2007Black, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.Themes.Office2007Silver, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.Themes.Office2010Black, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.Themes.Office2010Blue, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.Themes.Office2010Silver, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.Themes.Windows7, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.Themes.Windows8, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
+<assembly name="Telerik.WinControls.Themes.TelerikMetroTouch, Version=2016.3.1024.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e"/>
 </references>

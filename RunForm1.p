@@ -1,10 +1,12 @@
 USING System.Windows.Forms.Application FROM ASSEMBLY.
-DEFINE VARIABLE rTemp AS CLASS Form1 NO-UNDO.
+USING se.afa.intressent.gui.start FROM PROPATH.
+
+DEFINE VARIABLE rTemp AS CLASS start NO-UNDO.
 DO ON ERROR  UNDO, LEAVE
 	ON ENDKEY UNDO, LEAVE
 	ON STOP   UNDO, LEAVE
 	ON QUIT   UNDO, LEAVE:
-	rTemp = NEW Form1 ( ) .
+	rTemp = NEW start ( ) .
 	WAIT-FOR System.Windows.Forms.Application:Run ( rTemp ).
 	DEFINE VARIABLE i AS INTEGER NO-UNDO.
 	CATCH e1 AS Progress.Lang.AppError:

@@ -19,32 +19,14 @@ CLASS se.afa.intressent.gui.settings INHERITS RadForm :
     DEFINE VARIABLE temanamn     AS CHARACTER NO-UNDO.
     
     DEFINE PRIVATE VARIABLE cbTheme                     AS Telerik.WinControls.UI.RadSplitButton                 NO-UNDO.
-    DEFINE PRIVATE VARIABLE breezeTheme1                AS Telerik.WinControls.Themes.BreezeTheme                NO-UNDO.
-    DEFINE PRIVATE VARIABLE aquaTheme1                  AS Telerik.WinControls.Themes.AquaTheme                  NO-UNDO.
     DEFINE PRIVATE VARIABLE components                  AS System.ComponentModel.IContainer                      NO-UNDO.
     DEFINE PRIVATE VARIABLE buttonOk                    AS System.Windows.Forms.Button                           NO-UNDO.
     DEFINE PRIVATE VARIABLE buttonCancel                AS System.Windows.Forms.Button                           NO-UNDO.
     DEFINE PRIVATE VARIABLE menuBreeze                  AS Telerik.WinControls.UI.RadMenuItem                    NO-UNDO.
-    DEFINE PRIVATE VARIABLE windows8Theme1              AS Telerik.WinControls.Themes.Windows8Theme              NO-UNDO.
-    DEFINE PRIVATE VARIABLE windows7Theme1              AS Telerik.WinControls.Themes.Windows7Theme              NO-UNDO.
-    DEFINE PRIVATE VARIABLE visualStudio2012LightTheme1 AS Telerik.WinControls.Themes.VisualStudio2012LightTheme NO-UNDO.
-    DEFINE PRIVATE VARIABLE visualStudio2012DarkTheme1  AS Telerik.WinControls.Themes.VisualStudio2012DarkTheme  NO-UNDO.
-    DEFINE PRIVATE VARIABLE telerikMetroTouchTheme1     AS Telerik.WinControls.Themes.TelerikMetroTouchTheme     NO-UNDO.
-    DEFINE PRIVATE VARIABLE telerikMetroTheme1          AS Telerik.WinControls.Themes.TelerikMetroTheme          NO-UNDO.
-    DEFINE PRIVATE VARIABLE telerikMetroBlueTheme1      AS Telerik.WinControls.Themes.TelerikMetroBlueTheme      NO-UNDO.
-    DEFINE PRIVATE VARIABLE office2013LightTheme1       AS Telerik.WinControls.Themes.Office2013LightTheme       NO-UNDO.
-    DEFINE PRIVATE VARIABLE office2013DarkTheme1        AS Telerik.WinControls.Themes.Office2013DarkTheme        NO-UNDO.
-    DEFINE PRIVATE VARIABLE office2010SilverTheme1      AS Telerik.WinControls.Themes.Office2010SilverTheme      NO-UNDO.
-    DEFINE PRIVATE VARIABLE office2010BlueTheme1        AS Telerik.WinControls.Themes.Office2010BlueTheme        NO-UNDO.
-    DEFINE PRIVATE VARIABLE office2010BlackTheme1       AS Telerik.WinControls.Themes.Office2010BlackTheme       NO-UNDO.
-    DEFINE PRIVATE VARIABLE office2007SilverTheme1      AS Telerik.WinControls.Themes.Office2007SilverTheme      NO-UNDO.
-    DEFINE PRIVATE VARIABLE office2007BlackTheme1       AS Telerik.WinControls.Themes.Office2007BlackTheme       NO-UNDO.
     DEFINE PRIVATE VARIABLE menuwin8                    AS Telerik.WinControls.UI.RadMenuItem                    NO-UNDO.
     DEFINE PRIVATE VARIABLE menuwin7                    AS Telerik.WinControls.UI.RadMenuItem                    NO-UNDO.
     DEFINE PRIVATE VARIABLE menuvatten                  AS Telerik.WinControls.UI.RadMenuItem                    NO-UNDO.
     DEFINE PRIVATE VARIABLE menudesert                  AS Telerik.WinControls.UI.RadMenuItem                    NO-UNDO.
-    DEFINE PRIVATE VARIABLE highContrastBlackTheme1     AS Telerik.WinControls.Themes.HighContrastBlackTheme     NO-UNDO.
-    DEFINE PRIVATE VARIABLE desertTheme1                AS Telerik.WinControls.Themes.DesertTheme                NO-UNDO.
     
     CONSTRUCTOR PUBLIC settings( ):
     
@@ -165,24 +147,6 @@ CLASS se.afa.intressent.gui.settings INHERITS RadForm :
         
         THIS-OBJECT:buttonOk = NEW System.Windows.Forms.Button().
         THIS-OBJECT:buttonCancel = NEW System.Windows.Forms.Button().
-        THIS-OBJECT:aquaTheme1 = NEW Telerik.WinControls.Themes.AquaTheme().
-        THIS-OBJECT:breezeTheme1 = NEW Telerik.WinControls.Themes.BreezeTheme().
-        THIS-OBJECT:desertTheme1 = NEW Telerik.WinControls.Themes.DesertTheme().
-        THIS-OBJECT:highContrastBlackTheme1 = NEW Telerik.WinControls.Themes.HighContrastBlackTheme().
-        THIS-OBJECT:office2007BlackTheme1 = NEW Telerik.WinControls.Themes.Office2007BlackTheme().
-        THIS-OBJECT:office2007SilverTheme1 = NEW Telerik.WinControls.Themes.Office2007SilverTheme().
-        THIS-OBJECT:office2010BlackTheme1 = NEW Telerik.WinControls.Themes.Office2010BlackTheme().
-        THIS-OBJECT:office2010BlueTheme1 = NEW Telerik.WinControls.Themes.Office2010BlueTheme().
-        THIS-OBJECT:office2010SilverTheme1 = NEW Telerik.WinControls.Themes.Office2010SilverTheme().
-        THIS-OBJECT:office2013DarkTheme1 = NEW Telerik.WinControls.Themes.Office2013DarkTheme().
-        THIS-OBJECT:office2013LightTheme1 = NEW Telerik.WinControls.Themes.Office2013LightTheme().
-        THIS-OBJECT:windows7Theme1 = NEW Telerik.WinControls.Themes.Windows7Theme().
-        THIS-OBJECT:windows8Theme1 = NEW Telerik.WinControls.Themes.Windows8Theme().
-        THIS-OBJECT:visualStudio2012DarkTheme1 = NEW Telerik.WinControls.Themes.VisualStudio2012DarkTheme().
-        THIS-OBJECT:visualStudio2012LightTheme1 = NEW Telerik.WinControls.Themes.VisualStudio2012LightTheme().
-        THIS-OBJECT:telerikMetroBlueTheme1 = NEW Telerik.WinControls.Themes.TelerikMetroBlueTheme().
-        THIS-OBJECT:telerikMetroTheme1 = NEW Telerik.WinControls.Themes.TelerikMetroTheme().
-        THIS-OBJECT:telerikMetroTouchTheme1 = NEW Telerik.WinControls.Themes.TelerikMetroTouchTheme().
         THIS-OBJECT:cbTheme = NEW Telerik.WinControls.UI.RadSplitButton().
         THIS-OBJECT:menuvatten = NEW Telerik.WinControls.UI.RadMenuItem().
         THIS-OBJECT:menudesert = NEW Telerik.WinControls.UI.RadMenuItem().

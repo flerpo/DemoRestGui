@@ -1,13 +1,13 @@
  
- /*------------------------------------------------------------------------
-    File        : userSettings
-    Purpose     : 
-    Syntax      : 
-    Description : 
-    Author(s)   : EARA02
-    Created     : Tue Nov 20 22:00:03 CET 2018
-    Notes       : 
-  ----------------------------------------------------------------------*/
+/*------------------------------------------------------------------------
+   File        : userSettings
+   Purpose     : 
+   Syntax      : 
+   Description : 
+   Author(s)   : EARA02
+   Created     : Tue Nov 20 22:00:03 CET 2018
+   Notes       : 
+ ----------------------------------------------------------------------*/
 
 USING Progress.Lang.*.
 USING Progress.Json.ObjectModel.ObjectModelParser FROM PROPATH.
@@ -17,11 +17,10 @@ BLOCK-LEVEL ON ERROR UNDO, THROW.
 
 
 CLASS se.afa.mega.general.userSettings: 
-DEFINE VARIABLE lRetOk AS LOGICAL NO-UNDO.
-DEFINE VARIABLE hUserSettings AS HANDLE.
-DEFINE VARIABLE JsonUser AS JsonObject NO-UNDO.
-DEFINE VARIABLE myParser   AS ObjectModelParser NO-UNDO.
-
+    DEFINE VARIABLE hUserSettings      AS HANDLE.
+    DEFINE VARIABLE JsonUser           AS JsonObject        NO-UNDO.
+    DEFINE VARIABLE myParser           AS ObjectModelParser NO-UNDO.
+    DEFINE VARIABLE myUserSettingsFile AS CHARACTER         INIT "c:\temp\userSettings.json".
 
     /*------------------------------------------------------------------------------
      Purpose:
@@ -29,12 +28,25 @@ DEFINE VARIABLE myParser   AS ObjectModelParser NO-UNDO.
     ------------------------------------------------------------------------------*/
         
     CONSTRUCTOR PUBLIC userSettings (  ):
+        DEFINE VARIABLE lOk AS LOGICAL NO-UNDO.
         SUPER ().
-        
         myParser = NEW ObjectModelParser().
-        JsonUser = CAST(myParser:ParseFile('c:\temp\userSettings.json'), JsonObject).
+        IF SEARCH(myUserSettingsFile) <> ? THEN 
+        DO:
+            JsonUser = CAST(myParser:ParseFile(myUserSettingsFile), JsonObject) NO-ERROR.
+            
+        END.
+        ELSE 
+        DO:
+            DEFINE VARIABLE joBlank AS JsonObject NO-UNDO.
+            joBlank = NEW JsonObject().
+            joBlank:Add('theme', 'Windows8').
+            joBlank:WriteFile(myUserSettingsFile).
+            JsonUser = CAST(myParser:ParseFile(myUserSettingsFile), JsonObject) NO-ERROR.
+            
+        END.
         
-        
+       
     END CONSTRUCTOR.
 
     /*------------------------------------------------------------------------------

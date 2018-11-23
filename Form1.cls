@@ -78,10 +78,10 @@ CLASS Form1 INHERITS RadForm :
     DEFINE         VARIABLE rest                           AS HttpGet                                              NO-UNDO.
     
     
-    DEFINE TEMP-TABLE ttAerende LIKE aerende.
-    DEFINE TEMP-TABLE ttSignal LIKE signal.
-    DEFINE TEMP-TABLE ttBet LIKE bet.
-    DEFINE TEMP-TABLE ttDok LIKE dok.
+/*    DEFINE TEMP-TABLE ttAerende LIKE aerende.*/
+/*    DEFINE TEMP-TABLE ttSignal LIKE signal.  */
+/*    DEFINE TEMP-TABLE ttBet LIKE bet.        */
+/*    DEFINE TEMP-TABLE ttDok LIKE dok.        */
     DEFINE PRIVATE VARIABLE bs_ttEng               AS Progress.Data.BindingSource                      NO-UNDO.
     DEFINE         VARIABLE kodklass               AS CLASS                                            Kod.
     DEFINE PRIVATE VARIABLE statusbet              AS Telerik.WinControls.UI.RadLabelElement           NO-UNDO.
@@ -1676,14 +1676,14 @@ CLASS Form1 INHERITS RadForm :
         
         ja = poResponse:GetJsonArray('ttSignal').
         statussignalant:text = poResponse:GetCharacter('antal').
-        ASSIGN
-            h = TEMP-TABLE ttSignal:HANDLE.
-        h:READ-JSON ('JsonArray', ja, 'empty').
-        FOR EACH ttSignal:
-            ASSIGN 
-                ttSignal.SignalTypAvk = kodklass:getKod('signaltyp.signaltypavk', ttSignal.SignalTypAvk) no-error.
-        END.
-        progressbarstuff2(80).
+/*        ASSIGN                                                                                                    */
+/*            h = TEMP-TABLE ttSignal:HANDLE.                                                                       */
+/*        h:READ-JSON ('JsonArray', ja, 'empty').                                                                   */
+/*        FOR EACH ttSignal:                                                                                        */
+/*            ASSIGN                                                                                                */
+/*                ttSignal.SignalTypAvk = kodklass:getKod('signaltyp.signaltypavk', ttSignal.SignalTypAvk) no-error.*/
+/*        END.                                                                                                      */
+/*        progressbarstuff2(80).                                                                                    */
         
 
         CREATE QUERY qh.
@@ -1715,20 +1715,20 @@ CLASS Form1 INHERITS RadForm :
         /*        poResponse = canropaRest:doGetStuff('http://localhost:8080/moop/web/bet/'+ string(aerendeEng.EngId)).*/
         progressbarstuff3(50).
         statusbet:text = poResponse:GetCharacter('antal').
-        ja = poResponse:GetJsonArray('ttBet').
-        ASSIGN
-            h = TEMP-TABLE ttBet:HANDLE.
-        h:READ-JSON ('JsonArray', ja, 'empty'). 
-        progressbarstuff3(70).
-            
-        FOR EACH ttBet:
-            ASSIGN 
-                    
-                ttBet.BetStatAvk = kodklass:getKod('bet.betstatavk', ttBet.BetStatAvk)
-                ttBet.BetTypAvk  = kodklass:getKod('bet.bettypavk', ttBet.BetTypAvk) no-error.
-                    
-        END.
-        progressbarstuff3(90).
+/*        ja = poResponse:GetJsonArray('ttBet').                                                */
+/*        ASSIGN                                                                                */
+/*            h = TEMP-TABLE ttBet:HANDLE.                                                      */
+/*        h:READ-JSON ('JsonArray', ja, 'empty').                                               */
+/*        progressbarstuff3(70).                                                                */
+/*                                                                                              */
+/*        FOR EACH ttBet:                                                                       */
+/*            ASSIGN                                                                            */
+/*                                                                                              */
+/*                ttBet.BetStatAvk = kodklass:getKod('bet.betstatavk', ttBet.BetStatAvk)        */
+/*                ttBet.BetTypAvk  = kodklass:getKod('bet.bettypavk', ttBet.BetTypAvk) no-error.*/
+/*                                                                                              */
+/*        END.                                                                                  */
+/*        progressbarstuff3(90).                                                                */
         
         CREATE QUERY qh.
         qh:SET-BUFFERS ("ttBet").
@@ -1755,17 +1755,17 @@ CLASS Form1 INHERITS RadForm :
         progressbarstuff4(50).
         ja = poResponse:GetJsonArray('ttDok').
         progressbarstuff4(70).
-        ASSIGN
-            h = TEMP-TABLE ttDok:HANDLE.
-        h:READ-JSON ('JsonArray', ja, 'empty'). 
-            
-        FOR EACH ttDok:
-            ASSIGN
-
-                ttDok.DokTypAvk = kodklass:getKod('doktyp.doktypavk', ttdok.DokTypAvk) NO-ERROR.
-                
-
-        END.
+/*        ASSIGN                                                                                  */
+/*            h = TEMP-TABLE ttDok:HANDLE.                                                        */
+/*        h:READ-JSON ('JsonArray', ja, 'empty').                                                 */
+/*                                                                                                */
+/*        FOR EACH ttDok:                                                                         */
+/*            ASSIGN                                                                              */
+/*                                                                                                */
+/*                ttDok.DokTypAvk = kodklass:getKod('doktyp.doktypavk', ttdok.DokTypAvk) NO-ERROR.*/
+/*                                                                                                */
+/*                                                                                                */
+/*        END.                                                                                    */
         progressbarstuff4(90).
         CREATE QUERY qh.
         qh:SET-BUFFERS ("ttDok").
@@ -1806,17 +1806,17 @@ CLASS Form1 INHERITS RadForm :
     @VisualDesigner.
     METHOD PRIVATE VOID radGridView1_SelectionChanged_1( INPUT sender AS System.Object, INPUT e AS System.EventArgs ):
         
-        IF AVAILABLE ttaerende THEN
-        DO:           
-            populate_signal(ttAerende.AerendeId).
-            
-            /*            FUSKAR*/
-            FIND FIRST aerendeEng NO-LOCK WHERE aerendeEng.AerendeId = ttAerende.AerendeId AND aerendeEng.EngTypAvk = 'ROTPERSKUND'.
-            /*            slutfuskat*/
-            populate_bet(aerendeEng.EngId) .
-            populate_dok(ttAerende.KopplId).
-
-        END.
+/*        IF AVAILABLE ttaerende THEN                                                                                                 */
+/*        DO:                                                                                                                         */
+/*            populate_signal(ttAerende.AerendeId).                                                                                   */
+/*                                                                                                                                    */
+/*            /*            FUSKAR*/                                                                                                  */
+/*            FIND FIRST aerendeEng NO-LOCK WHERE aerendeEng.AerendeId = ttAerende.AerendeId AND aerendeEng.EngTypAvk = 'ROTPERSKUND'.*/
+/*            /*            slutfuskat*/                                                                                              */
+/*            populate_bet(aerendeEng.EngId) .                                                                                        */
+/*            populate_dok(ttAerende.KopplId).                                                                                        */
+/*                                                                                                                                    */
+/*        END.                                                                                                                        */
         RETURN.
 
     END METHOD.
@@ -2063,14 +2063,14 @@ CLASS Form1 INHERITS RadForm :
             DEFINE VARIABLE ja AS jsonarray.
             ja = poResponse2:GetJsonArray('ttAerende').
             
-            ASSIGN 
-                h = TEMP-TABLE ttAerende:HANDLE.
-            h:READ-JSON ('JsonArray', ja, 'empty').
-             
-            FOR EACH ttAerende:
-                ASSIGN 
-                    ttAerende.AerendeStatAvk = kodklass:getKod('aerende.aerendestatavk', ttAerende.AerendeStatAvk).
-            END.
+/*            ASSIGN                                                                                                 */
+/*                h = TEMP-TABLE ttAerende:HANDLE.                                                                   */
+/*            h:READ-JSON ('JsonArray', ja, 'empty').                                                                */
+/*                                                                                                                   */
+/*            FOR EACH ttAerende:                                                                                    */
+/*                ASSIGN                                                                                             */
+/*                    ttAerende.AerendeStatAvk = kodklass:getKod('aerende.aerendestatavk', ttAerende.AerendeStatAvk).*/
+/*            END.                                                                                                   */
 
             radLabelBarAerenden:text = poResponse2:GetCharacter('antal').
             progressbarstuff(90).

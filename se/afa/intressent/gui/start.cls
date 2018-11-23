@@ -21,7 +21,6 @@ CLASS se.afa.intressent.gui.start INHERITS RadForm:
     DEFINE PRIVATE VARIABLE aquaTheme1 AS Telerik.WinControls.Themes.AquaTheme NO-UNDO.
     DEFINE PRIVATE VARIABLE breezeTheme1 AS Telerik.WinControls.Themes.BreezeTheme NO-UNDO.
     DEFINE PRIVATE VARIABLE desertTheme1 AS Telerik.WinControls.Themes.DesertTheme NO-UNDO.
-    DEFINE         VARIABLE temanamn     AS CHARACTER                        NO-UNDO.
     DEFINE PRIVATE VARIABLE userSettings AS userSettings                     NO-UNDO.
     
     DEFINE PRIVATE VARIABLE btSoek       AS Telerik.WinControls.UI.RadButton NO-UNDO.
@@ -119,7 +118,9 @@ CLASS se.afa.intressent.gui.start INHERITS RadForm:
     METHOD PRIVATE VOID radButton1_Click( INPUT sender AS System.Object, INPUT e AS System.EventArgs ):
         DEFINE VARIABLE settingsWindow AS SETTINGS.
         settingsWindow = NEW settings().
-        WAIT-FOR settingsWindow:Show().		
+        
+        WAIT-FOR settingsWindow:ShowDialog().		
+        settingsWindow:Dispose().
         RETURN.
 
     END METHOD.
@@ -127,9 +128,6 @@ CLASS se.afa.intressent.gui.start INHERITS RadForm:
 
     METHOD PRIVATE VOID change_theme (INPUT themename AS CHARACTER):
         ThemeResolutionService:ApplicationThemeName = themename.
-        ASSIGN 
-            temanamn = themename.
-       
     END METHOD.
     DESTRUCTOR PUBLIC start ( ):
 
